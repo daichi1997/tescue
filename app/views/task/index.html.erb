@@ -1,0 +1,37 @@
+<h1>Task#index</h1>
+<p>Find me in app/views/task/index.html.erb</p>
+<body>
+
+    <main>
+        <section class="task-list">
+            <%= link_to '新規タスク作成', new_task_path,class:"new-task" %>
+            <h2>タスク一覧</h2>
+            <div class="task-filters">
+             <%= link_to 'タスク', root_path,class:'filter-btn' %>
+             <%= link_to '今日', root_path,class:'filter-btn' %>
+             <%= link_to '今週', root_path,class:'filter-btn' %>
+             <%= link_to '完了済み', root_path,class:'filter-btn' %>
+            </div>
+
+
+
+            <ul>
+                <li class="task-item">
+                 <%= check_box_tag :task_title %>
+                 <%= label_tag :task_title %>
+                 <%= %>
+                 <%= %>
+                    <span class="category">日用品</span>
+                 <%= check_box_tag :check %>
+                 <%= label_tag :check, "レポートを提出する" %>
+                    <span class="due-date">2024/09/20</span>
+                    <span class="category">仕事</span>
+
+
+                <!-- 他のタスクアイテム -->
+            </ul>
+        </section>
+        <button class="add-task-btn">+ 新しいタスク</button>
+    </main>
+</body>
+</html>
