@@ -175,3 +175,10 @@ header{
   padding: 5px;
   border-radius: 5px;
  }
+
+ .field{
+  background-color: #ddeec9;
+  text-align: center;
+  width: 600px;
+  margin: 0 auto;
+}
