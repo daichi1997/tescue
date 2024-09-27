@@ -1,37 +1,37 @@
-
+<div class="wrapper">
 <div class="back-cover">
 <h2 class="dvhead">新規登録</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
         <%= f.label :name %> <em>(6文字以内)</em><br />
-        <%= f.text_field :name, autofocus: true, maxlength: "6" %>
+        <%= f.text_field :name, autofocus: true, maxlength: "6",placeholder:"必須" %>
       </div>
 
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"必須" %>
   </div>
 
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> (６文字以内)</em>
+    <em>（<%= @minimum_password_length %> 文字以内）</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password",placeholder:"必須" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"同じパスワードを入力" %>
   </div>
   </div>
 
   <div class="actions">
-    <%= f.submit "新規登録" %>
+    <%= f.submit "新規登録",class:"dvbtn" %>
   </div>
 <% end %>
-
+</div>

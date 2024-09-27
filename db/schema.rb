@@ -11,42 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2024_09_20_101042) do
-  create_table "achievements", charset: "utf8mb4", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "categories", charset: "utf8mb4", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "name", null: false
-    t.string "color", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_categories_on_user_id"
-  end
-
-  create_table "reminders", charset: "utf8mb4", force: :cascade do |t|
-    t.bigint "task_id", null: false
-    t.datetime "remind_at", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["task_id"], name: "index_reminders_on_task_id"
-  end
-
-  create_table "tasks", charset: "utf8mb4", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "category_id", null: false
-    t.string "title", null: false
-    t.text "description", null: false
-    t.datetime "due_date", null: false
-    t.string "priority", null: false
-    t.string "status", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_tasks_on_category_id"
-    t.index ["user_id"], name: "index_tasks_on_user_id"
-  end
-
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
